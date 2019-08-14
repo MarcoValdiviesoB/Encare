@@ -13,6 +13,17 @@
     width: calc(#{nb-theme(sidebar-width)} - #{nb-theme(header-padding)});
   }
 
+  .user{
+    margin: 0 2em 0 2em;
+    text-transform: capitalize;
+    h1{
+      font-weight: 400;
+    }
+    h1:hover{
+      opacity: 0.8;
+    }
+  }
+
   nb-action {
     height: auto;
     display: flex;

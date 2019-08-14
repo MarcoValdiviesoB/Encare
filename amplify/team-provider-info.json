@@ -1,0 +1,19 @@
+{
+    "amp": {
+        "awscloudformation": {
+            "AuthRoleName": "ngx-admin-amp-20190813111942-authRole",
+            "UnauthRoleArn": "arn:aws:iam::838320544132:role/ngx-admin-amp-20190813111942-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::838320544132:role/ngx-admin-amp-20190813111942-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "ngx-admin-amp-20190813111942-deployment",
+            "UnauthRoleName": "ngx-admin-amp-20190813111942-unauthRole",
+            "StackName": "ngx-admin-amp-20190813111942",
+            "StackId": "arn:aws:cloudformation:us-east-1:838320544132:stack/ngx-admin-amp-20190813111942/c722cec0-bddd-11e9-8640-12069a319f62"
+        },
+        "categories": {
+            "auth": {
+                "ngxadminab14529b": {}
+            }
+        }
+    }
+}

@@ -11,6 +11,13 @@ import { CoreModule } from './@core/core.module';
 import { ThemeModule } from './@theme/theme.module';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { AmplifyAngularModule, AmplifyService, AmplifyModules } from 'aws-amplify-angular';
+import Auth from '@aws-amplify/auth';
+import Interactions from '@aws-amplify/interactions';
+import Storage from '@aws-amplify/storage';
+import { LogInComponent } from './auth/log-in/log-in.component';
+
+
 import {
   NbChatModule,
   NbDatepickerModule,
@@ -20,17 +27,30 @@ import {
   NbToastrModule,
   NbWindowModule,
 } from '@nebular/theme';
+import { CreateUserComponent } from './auth/create-user/create-user.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, LogInComponent, CreateUserComponent],
+  providers: [
+  {
+     provide: AmplifyService,
+     useFactory: () => {
+       return AmplifyModules({
+         Auth,
+         Storage,
+         Interactions
+       });
+     }
+   }
+ ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
     AppRoutingModule,
+    AmplifyAngularModule,
 
     ThemeModule.forRoot(),
-
     NbSidebarModule.forRoot(),
     NbMenuModule.forRoot(),
     NbDatepickerModule.forRoot(),

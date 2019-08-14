@@ -1,0 +1,34 @@
+{
+    "paths": [
+        {
+            "name": "/items",
+            "lambdaFunction": "encare",
+            "privacy": {
+                "open": true
+            }
+        }
+    ],
+    "resourceName": "encare",
+    "apiName": "encare",
+    "functionArns": [
+        {
+            "lambdaFunction": "encare"
+        }
+    ],
+    "privacy": {
+        "auth": 0,
+        "unauth": 0,
+        "authRoleName": "ngx-admin-amp-20190813111942-authRole",
+        "unAuthRoleName": "ngx-admin-amp-20190813111942-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "encare",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ]
+}

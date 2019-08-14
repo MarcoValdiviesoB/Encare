@@ -4,6 +4,9 @@ import { NbMediaBreakpointsService, NbMenuService, NbSidebarService, NbThemeServ
 import { UserData } from '../../../@core/data/users';
 import { map, takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
+import { AmplifyService } from 'aws-amplify-angular'
+import { Auth } from 'aws-amplify'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'ngx-header',
@@ -15,6 +18,9 @@ export class HeaderComponent implements OnInit, OnDestroy {
   private destroy$: Subject<void> = new Subject<void>();
   userPictureOnly: boolean = false;
   user: any;
+  signedIn: boolean;
+  greeting: string = ""
+
 
   themes = [
     {
@@ -43,7 +49,15 @@ export class HeaderComponent implements OnInit, OnDestroy {
               private menuService: NbMenuService,
               private themeService: NbThemeService,
               private userService: UserData,
-              private breakpointService: NbMediaBreakpointsService) {
+              private breakpointService: NbMediaBreakpointsService,
+              private amplifyService: AmplifyService,
+              private router: Router,
+            ) {
+                this.themeService.changeTheme('dark')
+                Auth.currentAuthenticatedUser({
+                bypassCache: false  // Optional, By default is false. If set to true, this call will send a request to Cognito to get the latest user data
+            }).then(user => {this.greeting = user.username;console.log(user)})
+            .catch(err => console.log(err));
   }
 
   ngOnInit() {
@@ -67,6 +81,16 @@ export class HeaderComponent implements OnInit, OnDestroy {
         takeUntil(this.destroy$),
       )
       .subscribe(themeName => this.currentTheme = themeName);
+  }
+
+  logIn = () => {
+    this.router.navigateByUrl('auth/login')
+  }
+
+  logOut = () => {
+    Auth.signOut()
+    .then(data => this.greeting = "")
+    .catch(err => console.log(err));
   }
 
   ngOnDestroy() {

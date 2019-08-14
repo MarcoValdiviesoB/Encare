@@ -14,5 +14,12 @@ import { MENU_ITEMS } from './pages-menu';
 })
 export class PagesComponent {
 
+  signedIn : boolean;
+  user : any;
+  greeting: string;
+
+  constructor(){
+  }
+
   menu = MENU_ITEMS;
 }

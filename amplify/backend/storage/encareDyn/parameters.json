@@ -1,0 +1,5 @@
+{
+    "tableName": "encareDyn",
+    "partitionKeyName": "id",
+    "partitionKeyType": "N"
+}
