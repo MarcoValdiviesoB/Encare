@@ -5,8 +5,7 @@ import { PagesComponent } from './pages.component';
 import { EncuestasComponent } from './encuestas/encuestas.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
-
-const routes: Routes = [{
+var routes: Routes = [{
   path: '',
   component: PagesComponent,
   children: [
@@ -31,4 +30,6 @@ const routes: Routes = [{
   exports: [RouterModule],
 })
 export class PagesRoutingModule {
+  constructor(){
+  }
 }

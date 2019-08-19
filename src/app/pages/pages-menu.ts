@@ -8,15 +8,6 @@ export const MENU_ITEMS: NbMenuItem[] = [
     home: true,
   },
   {
-    title: 'Encuestas',
-    children : [
-      {
-        title: 'Abrir encuesta',
-        link: '/pages/encuesta/nueva'
-      },
-    ]
-  },
-  {
     title: 'FEATURES',
     group: true,
   },
