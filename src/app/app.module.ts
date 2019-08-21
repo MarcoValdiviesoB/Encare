@@ -26,6 +26,10 @@ import {
   NbSidebarModule,
   NbToastrModule,
   NbWindowModule,
+  NbInputModule,
+  NbCardModule,
+  NbSelectModule,
+  NbButtonModule,
 } from '@nebular/theme';
 import { CreateUserComponent } from './auth/create-user/create-user.component';
 
@@ -44,12 +48,15 @@ import { CreateUserComponent } from './auth/create-user/create-user.component';
    }
  ],
   imports: [
+    NbButtonModule,
+    NbSelectModule,
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
     AppRoutingModule,
     AmplifyAngularModule,
-
+    NbCardModule,
+    NbInputModule,
     ThemeModule.forRoot(),
     NbSidebarModule.forRoot(),
     NbMenuModule.forRoot(),

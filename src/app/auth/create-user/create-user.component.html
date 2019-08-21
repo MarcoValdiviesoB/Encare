@@ -1,3 +1,18 @@
-<p>
-  create-user works!
-</p>
+<nb-card>
+  <nb-card-header>
+    <h1>Nuevo usuario</h1>
+  </nb-card-header>
+  <nb-card-body>
+    <input id= "username" nbInput placeholder="nombre usuario">
+    <input id= "email" type = "email" nbInput placeholder="Email usuario">
+    <nb-select id="type" placeholder="Seleccionar tipo usuario">
+      <nb-option value="Administrador">Administrador</nb-option>
+      <nb-option value="Ops">Gerente de operaciones</nb-option>
+      <nb-option value="Inspector">Inspector</nb-option>
+    </nb-select>
+    <button style="display:block;margin-top:2rem" nbButton (click) = "submit()">Enviar invitacion</button>
+  </nb-card-body>
+  <nb-card-footer>
+    <p *ngIf = "created" >Invitacion enviada al usuario</p>
+  </nb-card-footer>
+</nb-card>
