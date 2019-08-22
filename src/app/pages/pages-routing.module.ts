@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { PagesComponent } from './pages.component';
 import { EncuestasComponent } from './encuestas/encuestas.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { ViewUsersComponent } from './view-users/view-users.component';
 
 var routes: Routes = [{
   path: '',
@@ -21,6 +22,10 @@ var routes: Routes = [{
     {
       path: 'encuesta/nueva',
       component: EncuestasComponent
+    },
+    {
+      path: 'users',
+      component: ViewUsersComponent
     }
   ],
 }];

@@ -5,11 +5,11 @@ export const GRUPOS = {
     children : [
       {
         title: 'Crear usuario',
-        link: '/pages/users/new'
+        link: '/auth/register'
       },
       {
         title: 'Modificar usuarios',
-        link: '/pages/users/modify'
+        link: 'users'
       },
     ]
   }],
@@ -68,7 +68,7 @@ export const GRUPOS = {
   "Coordinador" : [{
     title: 'Inspectores y supervisores',
     icon: 'person-outline',
-    link: '#'
+    link: '/pages/users'
   },
   {
     title: 'Visitas',

@@ -14,6 +14,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
   {
     title: 'Auth',
     icon: 'lock-outline',
+    link: '/auth',
     children: [
       {
         title: 'Login',
@@ -24,8 +25,8 @@ export const MENU_ITEMS: NbMenuItem[] = [
         link: '/auth/register',
       },
       {
-        title: 'Request Password',
-        link: '/auth/request-password',
+        title: 'Manage users',
+        link: '/users',
       },
       {
         title: 'Reset Password',
