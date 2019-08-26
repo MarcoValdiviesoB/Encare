@@ -89,7 +89,10 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   logOut = () => {
     Auth.signOut()
-    .then(data => this.greeting = "")
+    .then(data => {
+      this.greeting = ""
+      this.router.navigateByUrl("/pages/dashboard")
+    })
     .catch(err => console.log(err));
   }
 

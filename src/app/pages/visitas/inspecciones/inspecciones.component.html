@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="row">
+    <div class="col-6 col-md-4">
+      <nb-card *ngFor = "let visita of visitas">
+        <h5>Nombre : <span style="font-weight:400">{{visita.username}}</span></h5>
+        <h5>Ubicacion : <span style="font-weight:400">{{visita.ubicacion}}</span></h5>
+        <h5>Encuesta : <span style="font-weight:400">{{visita.encuesta}}</span></h5>
+        <button nbButton status="success">Rellenar Formulario</button>
+      </nb-card>
+    </div>
+  </div>
+</div>

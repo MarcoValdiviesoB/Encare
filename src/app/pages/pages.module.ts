@@ -9,7 +9,15 @@ import { EncuestasComponent } from './encuestas/encuestas.component';
 import { ViewUsersComponent } from './view-users/view-users.component';
 import { NbCardModule,
          NbIconModule,
- } from '@nebular/theme'
+         NbInputModule,
+         NbButtonModule,
+         NbStepperModule,
+         NbSelectModule,
+ } from '@nebular/theme';
+import { SolicitudComponent } from './visitas/solicitud/solicitud.component';
+import { VisitasComponent } from './visitas/visitas.component';
+import { SolicitudesComponent } from './visitas/solicitudes/solicitudes.component';
+import { InspeccionesComponent } from './visitas/inspecciones/inspecciones.component'
 
 
 @NgModule({
@@ -20,11 +28,19 @@ import { NbCardModule,
     DashboardModule,
     NbCardModule,
     NbIconModule,
+    NbInputModule,
+    NbButtonModule,
+    NbStepperModule,
+    NbSelectModule,
   ],
   declarations: [
     PagesComponent,
     EncuestasComponent,
-    ViewUsersComponent
+    ViewUsersComponent,
+    SolicitudComponent,
+    VisitasComponent,
+    SolicitudesComponent,
+    InspeccionesComponent
   ],
 })
 export class PagesModule {

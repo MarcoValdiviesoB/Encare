@@ -38,9 +38,9 @@ export const GRUPOS = {
     }
   ],
   "Inspector" : [{
-    title: 'Formularios',
-    icon: 'file-outline',
-    link: '#'
+    title: 'Visitas',
+    icon: 'pin-outline',
+    link: 'visitas/inspecciones'
     }
   ],
   "Supervisor" : [{
@@ -62,7 +62,7 @@ export const GRUPOS = {
   {
     title: 'Visitas',
     icon: 'pin-outline',
-    link: '#'
+    link: 'visitas/solicitud',
     }
   ],
   "Coordinador" : [{
@@ -73,7 +73,7 @@ export const GRUPOS = {
   {
     title: 'Visitas',
     icon: 'pin-outline',
-    link: '#'
+    link: 'visitas/solicitudes'
     }
   ],
 }

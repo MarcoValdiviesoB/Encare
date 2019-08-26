@@ -1,0 +1,34 @@
+<router-outlet *ngIf="!solicitud && display"></router-outlet>
+<section class="stepper1" *ngIf="solicitud">
+  <nb-stepper selectedIndex="{{step}}">
+    <nb-step label= "Solicitud enviada">
+      <div class="row">
+        <div class="col-md-4 col-2">
+        </div>
+        <div class="solicitado col-10 col-md-4">
+          <nb-card style="padding:2rem">
+            <h4>Su solicitud ha sido enviada</h4>
+            <h4 style="font-weight:400">Ubicacion : {{solicitud["ubicacion"]}}</h4>
+            <button status="success"  nbButton>Editar ubicacion</button>
+          </nb-card>
+        </div>
+      </div>
+    </nb-step>
+    <nb-step label = "Inspeccion coordinada">
+      <div class="row">
+        <div class="col-md-4 col-2">
+        </div>
+        <div class="solicitado col-10 col-md-4">
+          <nb-card style="padding:2rem">
+            <h4>Su solicitud ha sido coordinada</h4>
+            <h4 style="font-weight:400">Ubicacion : {{solicitud["ubicacion"]}}</h4>
+          </nb-card>
+        </div>
+      </div>
+    </nb-step>
+    <nb-step label = "Inspeccion realizada" >
+    </nb-step>
+    <nb-step label = "Informe emitido">
+    </nb-step>
+  </nb-stepper>
+</section>

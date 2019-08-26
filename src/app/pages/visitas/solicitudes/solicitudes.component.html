@@ -1,0 +1,56 @@
+<div class="row">
+  <div class="container-fluid">
+    <div class="col-12" style="text-align:center">
+      <h1>VISITAS POR COORDINAR</h1>
+    </div>
+  </div>
+  <div *ngFor="let solicitud of solicitudes" class="col-12">
+    <nb-card >
+      <nb-card-header>
+        <div class="row">
+          <div class="col-6">
+            <h4>{{solicitud.username}}</h4>
+            <h6>{{solicitud.ubicacion}}</h6>
+          </div>
+          <div id="{{solicitud.username}}" class="col-6">
+            <nb-select required="true" placeholder="Seleccionar inspector">
+              <nb-option *ngFor="let user of usuarios" value="{{user.username}}">{{user.username}}</nb-option>
+            </nb-select>
+            <nb-select required="true" placeholder="Seleccionar formulario">
+              <nb-option value="Encuesta estratificacion">Encuesta estratificacion</nb-option>
+            </nb-select>
+            <button status="success" (click) = "asignar(solicitud.username)" nbButton>Asignar visita</button>
+          </div>
+        </div>
+      </nb-card-header>
+    </nb-card>
+  </div>
+</div>
+<div class="row">
+  <div class="container-fluid">
+    <div class="col-12" style="text-align:center">
+      <h1>VISITAS COORDINADAS</h1>
+    </div>
+  </div>
+  <div *ngFor="let solicitud of solicitadas" class="col-12">
+    <nb-card >
+      <nb-card-header>
+        <div class="row">
+          <div class="col-6">
+            <h4>{{solicitud.username}}</h4>
+            <h6>{{solicitud.ubicacion}}</h6>
+          </div>
+          <div class="col-6">
+            <nb-select placeholder="{{solicitud.inspector}}">
+              <nb-option *ngFor="let user of usuarios" value="{{user.username}}">{{user.username}}</nb-option>
+            </nb-select>
+            <nb-select placeholder="{{solicitud.encuesta}}">
+              <nb-option value="Encuesta estratificacion">Encuesta estratificacion</nb-option>
+            </nb-select>
+            <button status="success" (click) = "asignar(solicitud.username)" nbButton>Editar visita</button>
+          </div>
+        </div>
+      </nb-card-header>
+    </nb-card>
+  </div>
+</div>

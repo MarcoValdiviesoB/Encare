@@ -1,0 +1,11 @@
+{
+    "AppSyncApiName": "visitasGraph",
+    "DynamoDBBillingMode": "PAY_PER_REQUEST",
+    "DynamoDBEnableServerSideEncryption": "false",
+    "AuthCognitoUserPoolId": {
+        "Fn::GetAtt": [
+            "authngxadminab14529b",
+            "Outputs.UserPoolId"
+        ]
+    }
+}

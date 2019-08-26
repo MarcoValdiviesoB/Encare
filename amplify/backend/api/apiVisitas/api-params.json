@@ -1,0 +1,41 @@
+{
+    "paths": [
+        {
+            "name": "/visitas",
+            "lambdaFunction": "visitas",
+            "privacy": {
+                "private": true,
+                "auth": [
+                    "/POST",
+                    "/GET",
+                    "/PUT",
+                    "/PATCH",
+                    "/DELETE"
+                ]
+            }
+        }
+    ],
+    "resourceName": "apiVisitas",
+    "apiName": "apiVisitas",
+    "functionArns": [
+        {
+            "lambdaFunction": "visitas"
+        }
+    ],
+    "privacy": {
+        "auth": 1,
+        "unauth": 0,
+        "authRoleName": "ngx-admin-amp-20190813111942-authRole",
+        "unAuthRoleName": "ngx-admin-amp-20190813111942-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "visitas",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ]
+}

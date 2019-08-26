@@ -1,0 +1,7 @@
+{
+    "tableName": "visitas",
+    "partitionKeyName": "username",
+    "partitionKeyType": "S",
+    "sortKeyName": "date",
+    "sortKeyType": "N"
+}

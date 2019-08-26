@@ -7,6 +7,10 @@
 		"users": {
 			"service": "DynamoDB",
 			"providerPlugin": "awscloudformation"
+		},
+		"visitas": {
+			"service": "DynamoDB",
+			"providerPlugin": "awscloudformation"
 		}
 	},
 	"function": {
@@ -33,6 +37,21 @@
 				{
 					"category": "storage",
 					"resourceName": "users",
+					"attributes": [
+						"Name",
+						"Arn"
+					]
+				}
+			]
+		},
+		"visitas": {
+			"service": "Lambda",
+			"providerPlugin": "awscloudformation",
+			"build": true,
+			"dependsOn": [
+				{
+					"category": "storage",
+					"resourceName": "visitas",
 					"attributes": [
 						"Name",
 						"Arn"
@@ -69,6 +88,27 @@
 					]
 				}
 			]
+		},
+		"apiVisitas": {
+			"service": "API Gateway",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": [
+				{
+					"category": "function",
+					"resourceName": "visitas",
+					"attributes": [
+						"Name",
+						"Arn"
+					]
+				}
+			]
+		},
+		"visitasGraph": {
+			"service": "AppSync",
+			"providerPlugin": "awscloudformation",
+			"output": {
+				"securityType": "AMAZON_COGNITO_USER_POOLS"
+			}
 		}
 	},
 	"hosting": {

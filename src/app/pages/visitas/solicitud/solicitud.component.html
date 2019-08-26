@@ -1,0 +1,12 @@
+<div *ngIf = "!solicitada">
+  <nb-card>
+    <nb-card-header>
+      <h1>Solicitud visita</h1>
+    </nb-card-header>
+    <nb-card-body>
+        <input id="lugar" (blur) = "changeMap($event)" nbInput placeholder="Ubicacion">
+        <button status="success" (click) = "solicitarVisita()" nbButton>Solicitar visita</button>
+      <div class="gmap_canvas"><iframe width="600" height="500" id="gmap_canvas" [src] = 'source' frameborder="0" scrolling="no"></iframe></div>
+    </nb-card-body>
+  </nb-card>
+</div>
