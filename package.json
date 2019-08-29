@@ -10,6 +10,8 @@
     "url": "https://github.com/akveo/ngx-admin/issues"
   },
   "scripts": {
+    "fix-memory-limit": "cross-env LIMIT=2048 increase-memory-limit",
+    "build-prod": "node --max_old_space_size=5048 ./node_modules/@angular/cli/bin/ng build --prod",
     "ng": "ng",
     "conventional-changelog": "conventional-changelog",
     "start": "ng serve",

@@ -1,0 +1,23 @@
+<div class="row">
+  <div *ngFor="let field of display" [ngClass]="field.class ? field.class : 'col-lg-3 col-md-6 col-12'">
+    <nb-card >
+      <nb-card-header>
+        <div class="row">
+          <div class="col-10">
+            <h6>{{field.titulo}}</h6>
+          </div>
+          <div class="col-2">
+            <nb-icon *ngIf="field.valores" icon="checkmark-outline"></nb-icon>
+          </div>
+        </div>
+      </nb-card-header>
+      <nb-card-body>
+        <p *ngFor = "let valor of field.valor" >{{valor}}</p>
+        <div *ngFor="let valor of field.valores">
+          <p *ngIf=" valor.campo == 'comentario'">{{valor.valor}}</p>
+        </div>
+      </nb-card-body>
+    </nb-card>
+  </div>
+</div>
+<div>

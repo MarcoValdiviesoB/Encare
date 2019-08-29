@@ -31,3 +31,7 @@
 
   @include nb-overrides();
 };
+
+:host ::ng-deep .sv_q_title {
+  color: red;
+}

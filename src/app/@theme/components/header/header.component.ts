@@ -53,7 +53,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
               private amplifyService: AmplifyService,
               private router: Router,
             ) {
-                this.themeService.changeTheme('dark')
+                this.themeService.changeTheme('corporate')
                 Auth.currentAuthenticatedUser({
                 bypassCache: false  // Optional, By default is false. If set to true, this call will send a request to Cognito to get the latest user data
             }).then(user => {this.greeting = user.username;console.log(user)})

@@ -32,10 +32,9 @@ import {
   NbButtonModule,
 } from '@nebular/theme';
 import { CreateUserComponent } from './auth/create-user/create-user.component';
-import { EncuestaComponent } from './encuesta/encuesta.component';
 
 @NgModule({
-  declarations: [AppComponent, LogInComponent, CreateUserComponent, EncuestaComponent],
+  declarations: [AppComponent, LogInComponent, CreateUserComponent],
   providers: [
   {
      provide: AmplifyService,

@@ -8,3 +8,15 @@
   width: 30%;
   font-size: 2rem;
 }
+
+.test{
+  margin-bottom: 50px;
+}
+
+:host ::ng-deep .sv_p_container{
+  margin-bottom: 2rem;
+}
+
+:host ::ng-deep .test{
+  margin-bottom: 2rem;
+}

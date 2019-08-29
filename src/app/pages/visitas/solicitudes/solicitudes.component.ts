@@ -57,9 +57,11 @@ export class SolicitudesComponent implements OnInit {
     var elements = document.getElementById(id)["children"]
     var assign = []
     for (var element in elements){
-      if(true){
-        if(elements[element]["innerText"] != elements[element]["attributes"]["placeholder"]["nodeValue"]){
-          assign.push(elements[element]["innerText"])
+      if(elements[element]["attributes"]){
+        if(elements[element]["attributes"]["placeholder"]){
+          if(elements[element]["innerText"] != elements[element]["attributes"]["placeholder"]["nodeValue"]){
+            assign.push(elements[element]["innerText"])
+          }
         }
       }
     }

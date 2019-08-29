@@ -69,6 +69,11 @@
   }
 
   @include media-breakpoint-down(sm) {
+    .user{
+      h1{
+        font-size: 4vw;
+      }
+    }
     .control-item {
       display: none;
     }

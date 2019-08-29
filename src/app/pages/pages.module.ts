@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { NbMenuModule } from '@nebular/theme';
+import { SurveyComponent } from './survey.component'
+
 
 import { ThemeModule } from '../@theme/theme.module';
 import { PagesComponent } from './pages.component';
@@ -17,7 +19,9 @@ import { NbCardModule,
 import { SolicitudComponent } from './visitas/solicitud/solicitud.component';
 import { VisitasComponent } from './visitas/visitas.component';
 import { SolicitudesComponent } from './visitas/solicitudes/solicitudes.component';
-import { InspeccionesComponent } from './visitas/inspecciones/inspecciones.component'
+import { InspeccionesComponent } from './visitas/inspecciones/inspecciones.component';
+import { EncuestaComponent } from './encuesta/encuesta.component'
+import { ChartsModule } from 'ng2-charts';
 
 
 @NgModule({
@@ -32,6 +36,7 @@ import { InspeccionesComponent } from './visitas/inspecciones/inspecciones.compo
     NbButtonModule,
     NbStepperModule,
     NbSelectModule,
+    ChartsModule,
   ],
   declarations: [
     PagesComponent,
@@ -40,7 +45,9 @@ import { InspeccionesComponent } from './visitas/inspecciones/inspecciones.compo
     SolicitudComponent,
     VisitasComponent,
     SolicitudesComponent,
-    InspeccionesComponent
+    InspeccionesComponent,
+    SurveyComponent,
+    EncuestaComponent
   ],
 })
 export class PagesModule {

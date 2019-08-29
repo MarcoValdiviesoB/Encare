@@ -3,7 +3,7 @@
   "compilerOptions": {
     "outDir": "../out-tsc/app",
     "baseUrl": "./",
-    "types": ["node"],
+    "types": ["node","knockout"],
     "paths": {
       "@angular/*": [
         "../node_modules/@angular/*"

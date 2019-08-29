@@ -1,11 +1,12 @@
 <div class="container">
   <div class="row">
-    <div class="col-6 col-md-4">
-      <nb-card *ngFor = "let visita of visitas">
+    <div *ngFor = "let visita of visitas" class="col-12 col-md-6 col-lg-4" [ngClass]="!visita.datos ? '' : 'did'">
+      <nb-card >
         <h5>Nombre : <span style="font-weight:400">{{visita.username}}</span></h5>
         <h5>Ubicacion : <span style="font-weight:400">{{visita.ubicacion}}</span></h5>
         <h5>Encuesta : <span style="font-weight:400">{{visita.encuesta}}</span></h5>
-        <button nbButton status="success">Rellenar Formulario</button>
+        <button *ngIf="!visita.datos" nbButton status="success" (click) = "goToForm(visita.username)">Rellenar Formulario</button>
+        <button *ngIf="visita.datos" nbButton status="success">Revisar Inspeccion</button>
       </nb-card>
     </div>
   </div>

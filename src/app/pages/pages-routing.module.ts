@@ -9,6 +9,7 @@ import { SolicitudComponent } from './visitas/solicitud/solicitud.component'
 import { VisitasComponent } from './visitas/visitas.component'
 import { SolicitudesComponent } from './visitas/solicitudes/solicitudes.component'
 import { InspeccionesComponent } from './visitas/inspecciones/inspecciones.component'
+import { EncuestaComponent } from './encuesta/encuesta.component'
 
 
 var routes: Routes = [{
@@ -43,8 +44,12 @@ var routes: Routes = [{
       pathMatch: 'full',
     },
     {
-      path: 'encuesta/nueva',
+      path: 'encuesta/formulario/:cliente',
       component: EncuestasComponent
+    },
+    {
+      path: 'encuesta/view',
+      component : EncuestaComponent
     },
     {
       path: 'users',

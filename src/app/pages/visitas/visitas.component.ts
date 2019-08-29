@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { API , graphqlOperation, Auth } from 'aws-amplify'
+import { Router } from '@angular/router'
 
 const getVisita = `query getVisitasAmp($username: String! ) {
   getVisitasAmp(username: $username){
@@ -7,6 +8,7 @@ const getVisita = `query getVisitasAmp($username: String! ) {
    ubicacion
    inspector
    asigned
+   datos
   }
 }`
 
@@ -23,7 +25,11 @@ export class VisitasComponent implements OnInit {
   solicitud : Object
   display = false
 
-  constructor() {
+  verInforme = () => {
+    this.router.navigateByUrl("/pages/encuesta/view")
+  }
+
+  constructor(private router : Router) {
     Auth.currentAuthenticatedUser().then((user) => {
       this.user = user.username
     })
@@ -37,7 +43,10 @@ export class VisitasComponent implements OnInit {
     }
     else{
       this.step = 0
-      if(this.solicitud["asigned"]){
+      if(this.solicitud["datos"]){
+        this.step = 2
+      }
+      else if(this.solicitud["asigned"]){
         this.step = 1
       }
     }
